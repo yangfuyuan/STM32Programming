@@ -448,7 +448,7 @@ void MainWindow::bootloader(){
 
             progressbar->setValue((100.0f / (float)(end - start)) * (float)(addr - start));
             elapsed_timer->update((100.0f / (float)(end - start)) * (float)(addr - start),100);
-
+            logMessage(tr("Read address 0x%1 (%2%)").arg(QString::number(addr,16)).arg((100.0f / (float)(end - start)) * (float)(addr - start)), QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"),INFO);
             QCoreApplication::processEvents();//避免界面冻结
             fprintf(stdout,
                 "\rRead address 0x%08x (%.2f%%) ",
@@ -634,6 +634,7 @@ void MainWindow::bootloader(){
             offset	+= len;
             progressbar->setValue((100.0f / size) * offset);
             elapsed_timer->update((100.0f / size) * offset,100);
+            logMessage(tr("Wrote %1address 0x%2 (%3%)").arg(verify ? "and verified " : "").arg(QString::number(addr,16)).arg((100.0f / size) * offset), QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"),INFO);
             QCoreApplication::processEvents();//避免界面冻结
             fprintf(stdout,
                         "\rWrote %saddress 0x%08x (%.2f%%) ",
@@ -846,6 +847,8 @@ void MainWindow::logMessage(QString str, QString tag, MessageLevel level){
         }
 
     }
+
+    loglist->setCurrentRow(loglist->count() -1);
 }
 
 void MainWindow::loginfo(string info, int level)

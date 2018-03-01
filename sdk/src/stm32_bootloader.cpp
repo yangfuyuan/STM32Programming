@@ -337,7 +337,9 @@ namespace stm32{
         do{
             size_t remainSize = 1;
             size_t recvSize;
-            int ret = waitForData(remainSize, timeout - waitTime, &recvSize);
+            int ret = 0;
+            if(timeout)
+                    waitForData(remainSize, timeout - waitTime, &recvSize);
 
             if (ret == -1&& timeout){
                 if((waitTime=(getms() - startTs)) <= timeout)
