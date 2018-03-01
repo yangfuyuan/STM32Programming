@@ -460,7 +460,7 @@ static parser_err_t binary_open(binary_t *storage, const char *filename, const c
 #ifndef __WIN32__
                 S_IRUSR  | S_IWUSR | S_IRGRP | S_IROTH
 #else
-                S_IRUSR | IWUSR | S_IWGRP | S_IWOTH
+                S_IRUSR | S_IWUSR | S_IWGRP | S_IWOTH
 #endif
             );
         storage->stat.st_size = 0;

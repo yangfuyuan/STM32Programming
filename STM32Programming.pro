@@ -52,5 +52,4 @@ SOURCES += \
 RESOURCES += gui_icons.qrc
 
 RC_FILE = STM32Programming.rc
-RC_FILE = myapp.rc
 
