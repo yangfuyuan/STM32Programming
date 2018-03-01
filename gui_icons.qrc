@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/Programmer.ico</file>
+        <file>images/clear.png</file>
+        <file>images/delete.png</file>
+        <file>images/icon_update.png</file>
+        <file>images/save.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>qss/scroll.qss</file>
+    </qresource>
+</RCC>
