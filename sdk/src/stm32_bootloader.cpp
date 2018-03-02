@@ -337,14 +337,13 @@ namespace stm32{
         do{
             size_t remainSize = 1;
             size_t recvSize;
-            int ret = 0;
             if(timeout)
-                    waitForData(remainSize, timeout - waitTime, &recvSize);
+                    ans = waitForData(remainSize, timeout - waitTime, &recvSize);
 
-            if (ret == -1&& timeout){
+            if (ans == STM32_ERR_TIMEOUT&& timeout){
                 if((waitTime=(getms() - startTs)) <= timeout)
                     continue;
-            }else if(ret == -2){
+            }else if(ans == STM32_ERR_UNKNOWN){
                 return STM32_ERR_UNKNOWN;
             }
 
