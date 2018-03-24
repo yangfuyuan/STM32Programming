@@ -8,6 +8,7 @@
 #include <QApplication>
 #include <cstdio>
 #include <cstdlib>
+#include <QStyleFactory>
 
 
 #include "mainwindow.h"
@@ -18,6 +19,8 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     app.setApplicationDisplayName(VER);
     app.setAttribute(Qt::AA_UseDesktopOpenGL);
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+
 
     QFile file(":/qss/scroll.qss");
     file.open(QFile::ReadOnly);
