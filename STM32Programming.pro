@@ -8,7 +8,7 @@ INCLUDEPATH += .
 DEFINES -= UNICODE
 QT += widgets
 QT += serialport
-VERSION = 1.0
+VERSION = 1.1
 VERSTR = '\\"$${VERSION}\\"'
 DEFINES += VER=\"$${VERSTR}\"
 QMAKE_TARGET_PRODUCT = "STM32 BootLoader Read Writer"
@@ -26,16 +26,19 @@ HEADERS += \
            mainwindow.h\
            elapsedtimer.h \
            sdk/include/stm32_bootloader.h \
-    sdk/include/simplesignal.hpp
+    sdk/include/simplesignal.hpp \
+    qcomcheckbox.h
 
 FORMS += mainwindow.ui
 
 SOURCES += \
            main.cpp\
            mainwindow.cpp\
+           app.cpp \
            elapsedtimer.cpp \
            sdk/src/stm32_bootloader.cpp \
            sdk/src/serial.cpp \
+           qcomcheckbox.cpp
 
 win32{
 SOURCES += \
