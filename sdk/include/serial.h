@@ -142,7 +142,7 @@ namespace serial {
 		* \throw serial::IOException
 		* \throw std::invalid_argument
 		*/
-		Serial (const std::string &port = "",
+                explicit Serial (const std::string &port = "",
 			uint32_t baudrate = 9600,
 			Timeout timeout = Timeout(),
 			bytesize_t bytesize = eightbits,

@@ -1,13 +1,16 @@
 ###################################################################
 ###################################################################
+QT       += core gui
+QT += serialport
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TEMPLATE = app
 TARGET = STM32Programming
 DEPENDPATH += .
 INCLUDEPATH += .
 #CONFIG += release
 DEFINES -= UNICODE
-QT += widgets
-QT += serialport
+
 VERSION = 1.1
 VERSTR = '\\"$${VERSION}\\"'
 DEFINES += VER=\"$${VERSTR}\"

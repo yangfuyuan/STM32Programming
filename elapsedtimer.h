@@ -2,8 +2,8 @@
  *  STM32Programming
  *
  *  Copyright 2015 - 2020 yangfuyuan
- *  
- * 
+ *
+ *
  */
 
 #ifndef ELAPSEDTIMER_H
@@ -18,7 +18,7 @@ class ElapsedTimer : public QLabel
     Q_OBJECT
 
 public:
-    ElapsedTimer(QWidget *parent = 0);
+    explicit ElapsedTimer(QWidget *parent = 0);
     ~ElapsedTimer();
     int ms();
     void update(unsigned long long progress, unsigned long long total);
